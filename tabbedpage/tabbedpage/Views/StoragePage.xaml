@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="tabbedpage.Views.StoragePage"
+             Title="Storage"
+             x:Name="StorageViewPage"
+             BackgroundColor="#FFFAE3">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="AddItem_Clicked" IconImageSource="sharp_playlist_add_white_48"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <ListView x:Name="StoragelistView" Margin="10" ItemSelected="OnListSItemSelected" IsVisible="True" SeparatorColor="Black" RowHeight="70">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="40"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="40"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding NickName}" FontSize="Title"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding ExpiryDate, StringFormat='Use By: {0:dd MMMM, yyyy}'}" FontSize="Subtitle"  TextColor="Gray"/>
+                            <Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Source="{Binding image_path}" Aspect="AspectFill" Rotation="270"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+  
+        <Label x:Name="EmptyMessage" Text="There is no storage"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" IsVisible="False"/>
+    </StackLayout>
+</ContentPage>

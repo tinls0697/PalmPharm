@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="tabbedpage.Views.AlarmDetailPage"
+             Title="{Binding DrugsName}"
+             BackgroundColor="#FFFAE3">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="OnDeleteClicked" IconImageSource="sharp_delete_white_48.png"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Padding="15">
+        <Entry Text="{Binding TimesTaken}" x:Name="TimesTaken" IsVisible="False" />
+        <Label Text="{Binding ID}" x:Name="ID" IsVisible="False"/>
+        <Label Text="{Binding Timeinterval}" x:Name="Timeinterval" IsVisible="False"/>
+        <Label Text="{Binding Timesperday}" x:Name="txtTimes" IsVisible="False"/>
+        <Entry Text="{Binding DoneDate}" x:Name="DoneDate" IsVisible="False"/>
+        <Entry Text="{Binding NextAlarm}" x:Name="NextAlarm" IsVisible="False"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="{Binding TimesTakenPrint}" x:Name="TimesTakenPrint" FontSize="Medium" Grid.Row="0" Grid.Column="0" XAlign="Start"/>
+            <Label Text="" x:Name="NextAlarmPrint"  FontAttributes="Bold" TextColor="Red" FontSize="Medium"  Grid.Row="0" Grid.Column="1" IsVisible="False" XAlign="End"/>
+        </Grid>
+
+        <Button Text="Set notification" x:Name="btnSetNoti" Clicked="OnSetNotiClicked" IsEnabled="False"  Grid.Row="0" Grid.Column="0"/>
+        
+        <Grid Padding="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+
+            <Label Text="Drugs Name:" FontSize="Medium" FontAttributes="Bold" Grid.Row="0" Grid.Column="0"/>
+            <Label Text="{Binding DrugsName}" x:Name="DrugName" FontSize="Medium" Grid.Row="1" Grid.Column="0"/>
+
+            <Label Text="Nick Name:" FontSize="Medium" FontAttributes="Bold" Grid.Row="2" Grid.Column="0"/>
+            <Label Text="{Binding NickName}"  x:Name="NickName" FontSize="Medium" Grid.Row="3" Grid.Column="0"/>
+
+            <Label Text="Quantity:" FontSize="Medium" FontAttributes="Bold" Grid.Row="4" Grid.Column="0"/>
+            <Label Text="{Binding QuantityUnit}" x:Name="QtyUnit" FontSize="Medium" Grid.Row="5" Grid.Column="0"/>
+
+            <Label Text="Instructions:" FontSize="Medium" FontAttributes="Bold" Grid.Row="6" Grid.Column="0"/>
+            <Label Text="{Binding DailyIntake}" FontSize="Medium" Grid.Row="7" Grid.Column="0"/>
+
+            <Label Text="Notes:" FontSize="Medium" FontAttributes="Bold" Grid.Row="8" Grid.Column="0"/>
+            <Label Text="{Binding Note}" FontSize="Medium" Grid.Row="9" Grid.Column="0"/>
+
+            <Image Source="{Binding image_path}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="6"/>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>

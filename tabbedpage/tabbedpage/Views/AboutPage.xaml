@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="tabbedpage.Views.AboutPage"
+             Title="Help Center"
+             BackgroundColor="#FFFAE3">
+
+    <ScrollView x:Name="ScrollView" Padding="15">
+        <StackLayout>
+            <Image Source="info.png" HeightRequest="200"/>
+            
+            <Grid Padding="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="If you have chest pain or shortness of breath" TextColor="Red" FontSize="Title" XAlign="Center" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="Call 999 immediately" TextColor="Red" FontSize="Title" XAlign="Center" Grid.Row="1" Grid.Column="0"/>
+            </Grid>
+
+
+            <Label Text="Instruction" FontSize="Body"/>
+            <Frame CornerRadius="10" OutlineColor="Gray" Padding="15">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Text="Guide to Alarm Setup" Clicked="OnPDFClicked" Grid.Row="0" Grid.Column="0" />
+                    <Button Text="Guide to Insert Storage Details" Clicked="OnPDFStorageClicked" Grid.Row="1" Grid.Column="0" />
+                </Grid>
+            </Frame>
+
+            <Label Text="Application Policy" FontSize="Body"/>
+            <Frame CornerRadius="10" OutlineColor="Gray" Padding="5">
+                <Grid Padding="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Disclaimer: " FontSize="Large" FontAttributes="Bold" Grid.Row="0" Grid.Column="0"/>
+                    <Label Text="This mobile app is still in development progress. Function interactions might differ between devices. This application is not a subsitute for medical advice" FontSize="Medium" Grid.Row="1" Grid.Column="0"/>
+                    <Label Text="Please consult healthcare professionals before making any health, medical or other decisions based upon the data." FontSize="Medium" Grid.Row="2" Grid.Column="0"/>
+
+                    <Label Text="Privacy Policy: " FontSize="Large" FontAttributes="Bold" Grid.Row="3" Grid.Column="0"/>
+                    <Label Text="Tin-Long Sung built the PalmPharm app as an Free app. This SERVICE is provided by Tin-Long Sung at no cost and is intended for use as is." FontSize="Medium" Grid.Row="4" Grid.Column="0"/>
+                    <Label Text="This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service." FontSize="Medium" Grid.Row="5" Grid.Column="0"/>
+                </Grid>
+            </Frame>
+
+            <Frame CornerRadius="10" OutlineColor="Gray" Padding="5">
+                <Grid Padding="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Terms and Conditions: " FontSize="Large" FontAttributes="Bold" Grid.Row="1" Grid.Column="0"/>
+                    <Label Text="By downloading or using the app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app. You're not allowed to copy, or modify the app, any part of the app, or our trademarks in any way. You're not allowed to attempt to extract the source code of the app, and you also shouldn't try to translate the app into other languages, or make derivative versions. The app itself, and all the trade marks, copyright, database rights and other intellectual property rights related to it, still belong to Tin-Long Sung." FontSize="Medium" Grid.Row="2" Grid.Column="0"/>
+                    <Label Text="Tin-Long Sung is committed to ensuring that the app is as useful and efficient as possible. For that reason, we reserve the right to make changes to the app or to charge for its services, at any time and for any reason. We will never charge you for the app or its services without making it very clear to you exactly what you're paying for." FontSize="Medium" Grid.Row="3" Grid.Column="0"/>
+                    <Label Text="The PalmPharm app stores and processes personal data that you have provided to us, in order to provide my Service. It's your responsibility to keep your phone and access to the app secure. We therefore recommend that you do not jailbreak or root your phone, which is the process of removing software restrictions and limitations imposed by the official operating system of your device. It could make your phone vulnerable to malware/viruses/malicious programs, compromise your phone's security features and it could mean that the PalmPharm app won't work properly or at all." FontSize="Medium" Grid.Row="4" Grid.Column="0"/>
+                </Grid>
+            </Frame>
+        </StackLayout>        
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="tabbedpage.Views.NewAlarmPage"
+             Title="New Item"
+             BackgroundColor="#FFFAE3">
+    
+    <ScrollView x:Name="ScrollView">
+        <StackLayout Margin="20" VerticalOptions="StartAndExpand">
+            <Label Text="Drug Name" />
+            <Entry Text="{Binding DrugsName}" x:Name="txtDrug" Placeholder="Drug Name"/>
+
+            <Label Text="Nickname" />
+            <Entry Text="{Binding NickName}" x:Name="txtNick" Placeholder="The name you usually call it"/>
+
+            <Label Text="Quantity" />
+            <Entry Text="{Binding Quantity}" x:Name="txtQty" Keyboard="Numeric"/>
+
+            <Label Text="Unit"/>
+            <Picker x:Name="UnitPicker" Title="Select a Unit" SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>tablet(s)</x:String>
+                        <x:String>mL</x:String>
+                        <x:String>drops</x:String>
+                        <x:String>capsule</x:String>
+                        <x:String>sachet</x:String>
+                        <x:String>bottle</x:String>
+                    </x:Array>                
+                </Picker.ItemsSource>
+            </Picker>
+            <Entry x:Name="UnitEntry" Text="{Binding Unit}" IsVisible="False"/>
+
+            <Label Text="Times per day" />
+            <Entry Text="{Binding Timesperday}" x:Name="txtTimes" Keyboard="Numeric"/>
+
+            <Label Text="Interval (in hours) between each intake" />
+            <Entry Text="{Binding Timeinterval}" x:Name="txtint" Keyboard="Numeric"/>
+
+            <Label Text="Notes" />
+            <Entry Text="{Binding Note}" x:Name="txtNote" Placeholder="Enter any notes here......."/>
+
+            <Label Text="Image"/>
+            <Image x:Name="image"/>
+            <Button x:Name="takePhoto" Text="Take a Photo" Clicked="OnClickTakePhoto"/>
+            <Button x:Name="pickPhoto" Text="Pick a Photo" Clicked="OnClickPickPhoto"/>
+            <Entry x:Name="imagepath" Text="{Binding image_path}" IsVisible="False"/>
+            
+            <Entry Text="{Binding TimesTaken}" x:Name="TimesTaken" IsVisible="False"/>
+            <Entry Text="{Binding DoneDate}" x:Name="DoneDate" IsVisible="False"/>          
+            
+            <Button Text="Save" Clicked="OnSaveClicked" />
+            <Button Text="Cancel" Clicked="OnCancelClicked" />
+        </StackLayout>
+    </ScrollView>
+    
+
+</ContentPage>

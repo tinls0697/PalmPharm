@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="tabbedpage.Views.StorageDetailsPage"
+             Title="{Binding DrugsName}"
+             BackgroundColor="#FFFAE3">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="OnEditClicked" IconImageSource="sharp_create_white_48.png"/>
+        <ToolbarItem Clicked="OnDeleteClicked" IconImageSource="sharp_delete_white_48.png"/>
+    </ContentPage.ToolbarItems>
+    
+    <ScrollView x:Name="ScrollView">
+            <StackLayout Spacing="20" Padding="20">
+            <Label Text="Drugs Name:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding DrugsName}" d:Text="Drug Name" FontSize="Medium" />
+
+            <Label Text="Nick Name:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding NickName}" d:Text="Drug Nick Name" FontSize="Medium" />
+
+            <Label Text="Expiry Date:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding ExpiryDate, StringFormat='{0:MMMM dd,yyyy}'}" d:Text="Quantity" FontSize="Medium" />
+
+            <Label Text="Note:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding Note}" x:Name="lblnotes" d:Text="Note" FontSize="Medium" />
+
+            <Label Text="Location Image:" FontSize="Medium" FontAttributes="Bold"/>
+                <Image Source="{Binding image_path}"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

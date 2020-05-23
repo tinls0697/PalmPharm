@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="tabbedpage.Views.NewStoragePage"
+             Title="New Item"
+             BackgroundColor="#FFFAE3">
+    <ScrollView x:Name="ScrollView">
+        <StackLayout Margin="20" VerticalOptions="StartAndExpand">
+            <Label Text="Drug Name"/>
+            <Entry Text="{Binding DrugsName}" x:Name="txtDrug"/>
+
+            <Label Text="Nickname"/>
+            <Entry Text="{Binding NickName}" x:Name="txtNick"/>
+
+            <Label Text="Expiry Date"/>
+            <DatePicker DateSelected="DatePicker_DateSelected" x:Name="DPicker"/>
+            <Entry x:Name="DateEntry" Text="{Binding ExpiryDate}" IsVisible="False"/>
+
+            <Label Text="Note"/>
+            <Entry Text="{Binding Note}" x:Name="txtNote"/>
+
+            <Label Text="Image"/>
+            <Image x:Name="image"/>
+            <Button x:Name="takePhoto" Text="Take a Photo" Clicked="OnClickTakePhoto"/>
+            <Button x:Name="pickPhoto" Text="Pick a Photo" Clicked="OnClickPickPhoto"/>
+            <Entry x:Name="imagepath" Text="{Binding image_path}" IsVisible="False"/>
+
+            <Button Text="Save" Clicked="OnSaveClicked" />
+            <Button Text="Cancel" Clicked="OnCancelClicked" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

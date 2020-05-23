@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="tabbedpage.Views.HomePage"
+             Title="Welcome"
+             BackgroundColor="#FFFAE3">
+    
+        <ScrollView x:Name="ScrollView">
+            <StackLayout>
+                <Image Source="app_icon_trans.png" HeightRequest="250"/>
+                                
+            <Grid Padding="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="What can I do with PalmPharm?" FontSize="Title" XAlign="Start" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="• Alerts you when is due to take medicine, ensure punctual intake" FontSize="Medium" XAlign="Start"  Grid.Row="1" Grid.Column="0"/>
+                <Label Text="• Serve as a daily reminder to the elderly or people with dementia or  poor memory " FontSize="Medium" XAlign="Start"  Grid.Row="2" Grid.Column="0"/>
+                <Label Text="• Avoid you taking expired medications from the medicine cabinet " FontSize="Medium" XAlign="Start"  Grid.Row="3" Grid.Column="0"/>
+                <Label Text="• Organizing and centralizing all the medications enable you to locate them easily " FontSize="Medium" XAlign="Start"  Grid.Row="4" Grid.Column="0"/>
+            </Grid>
+                
+        </StackLayout>
+        </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            mc:Ignorable="d"
+            xmlns:views="clr-namespace:tabbedpage.Views"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            BarBackgroundColor="#3CB371"
+            BarTextColor="White"
+            android:TabbedPage.BarItemColor="#66FFFF"
+            android:TabbedPage.BarSelectedItemColor="White"
+            x:Class="tabbedpage.Views.MainPage">
+
+    <TabbedPage.Children>
+        <NavigationPage Title="Home" IconImageSource="baseline_home_white_48.png" >
+            <x:Arguments>
+                <views:HomePage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Alarm" IconImageSource="baseline_alarm_white_48.png" >
+            <x:Arguments>
+                <views:AlarmPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Storage" IconImageSource="baseline_inbox_white_48.png" >
+            <x:Arguments>
+                <views:StoragePage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <!--<NavigationPage Title="Settings" IconImageSource="baseline_settings_white_48.png" >
+            <x:Arguments>
+                <views:SettingsPage />
+            </x:Arguments>
+        </NavigationPage>-->
+
+        <NavigationPage Title="Help Center" IconImageSource="baseline_info_white_48.png" >
+            <x:Arguments>
+                <views:AboutPage />
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+    
+</TabbedPage>
